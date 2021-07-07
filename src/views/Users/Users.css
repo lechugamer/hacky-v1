@@ -1,0 +1,10 @@
+.container-users {
+  position: relative;
+  text-align: left;
+  grid-area: main;
+  background: #E4E9F7;
+}
+
+#sidebar {
+  height: 100%;
+}
