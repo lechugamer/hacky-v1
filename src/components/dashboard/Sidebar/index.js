@@ -1,78 +1,72 @@
-import { Link, useHistory } from "react-router-dom";
-import "./Sidebar.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaHome, FaUsers, FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { IoDocumentText } from "react-icons/io5";
+import { IconContext } from "react-icons";
 import logo from "../../../assets/logo.png";
+import "./Sidebar.css";
 
-const Sidebar = ({ sidebarOpen, closeSidebar }) => {
-
-  const history = useHistory();
-
-  function logout () {
-    localStorage.clear();
-    history.push('/');
-  }
+const Sidebar = () => {
+  const [inactive, setInactive] = useState(false);
 
   return (
-    <div className={sidebarOpen ? "sidebar_responsive" : ""} id="sidebar">
-      <div className="sidebar__title">
-        <div className="sidebar__img">
+    <IconContext.Provider value={{ size: "30px" }}>
+      <div className={`sidebar ${inactive ? "inactive" : ""}`}>
+        <div className="sidebar__logo">
+          <div className="sidebar__img">
           <img src={logo} alt="logo" />
-          <h1>Chatbot</h1>
+          <h3>Hacky</h3>
+          </div>
+        <div onClick={() => setInactive(!inactive)} className="arrow__close">
+          <i>
+            <FaChevronLeft />
+          </i>
         </div>
-        <i
-          onClick={() => closeSidebar()}
-          className="fa fa-times"
-          id="sidebarIcon"
-          aria-hidden="true"
-        ></i>
-      </div>
-
-      <div className="sidebar__menu">
+        </div>
         <Link to="/dashboard" className="sidebar__link">
-          <i className="fa fa-home"></i>
-          <span>Dashboard</span>
+          <i className="menu__icons">
+            <FaHome />
+          </i>
+          <h3>Tablero</h3>
         </Link>
         <Link to="/users" className="sidebar__link">
-          <i className="fa fa-users" aria-hidden="true"></i>
-          <span>Users</span>
+          <i className="menu__icons">
+            <FaUsers />
+          </i>
+          <h3>Usuarios</h3>
         </Link>
         <Link to="/entries" className="sidebar__link">
-            <i className="fa fa-file-text-o"></i>
-            <span>Entries</span>
+          <i className="menu__icons">
+            <IoDocumentText />
+          </i>
+          <h3>Entradas</h3>
         </Link>
         <Link to="/tags" className="sidebar__link">
-          <i className="fa fa-wrench"></i>
-          <span>Tags</span>
+          <i className="menu__icons">
+            <FaUsers />
+          </i>
+          <h3>Etiquetas</h3>
         </Link>
-        <div className="sidebar__link">
-          <i className="fa fa-archive"></i>
-          <span>Dummy</span>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-handshake-o"></i>
-          <span>Dummy</span>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-question"></i>
-          <span>Dummy</span>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-sign-out"></i>
-          <span>Dummy</span>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-calendar-check-o"></i>
-          <span>Dummy</span>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-files-o"></i>
-          <span>Dummy</span>
-        </div>
-        <button className="sidebar__logout" onClick={logout}>
-          <i className="fa fa-power-off"></i>
-          <span>Log out</span>
-        </button>
+        <Link className="sidebar__link">
+          <i className="menu__icons">
+            <FaUsers />
+          </i>
+          <h3>Vacio</h3>
+        </Link>
+        <Link className="sidebar__link">
+          <i className="menu__icons">
+            <FaUsers />
+          </i>
+          <h3>Vacio</h3>
+        </Link>
+        <Link className="sidebar__logout">
+          <i className="logout__icon">
+            <FaUsers />
+          </i>
+          <h3>Cerrar Sesión</h3>
+        </Link>
       </div>
-    </div>
+    </IconContext.Provider>
   );
 };
 

@@ -55,7 +55,7 @@ function Users() {
   useEffect(() => {
       if(localStorage.getItem('devschooltoken'))
       {
-          history.push('/user')
+          history.push('/users')
       } else {
           history.push('/')
       }

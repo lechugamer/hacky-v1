@@ -32,7 +32,8 @@
   justify-content: space-evenly;
 }
 
-.form, form{
+.form,
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,10 +57,11 @@
   overflow: hidden;
   transition: 0.5s;
   letter-spacing: 2px;
+  cursor: pointer;
 }
 
 .button-login:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -80,12 +82,12 @@
 .button-login:hover {
   background: var(--login);
   color: white;
-  box-shadow: 0  0 10px var(--login);
+  box-shadow: 0 0 10px var(--login);
   transition-delay: 0.5s;
 }
 
 .button-login:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -113,7 +115,7 @@
   margin-bottom: 20px;
 }
 
-.container-input input{
+.container-input input {
   width: 250px;
   height: 40px;
   padding: 10px;
@@ -129,10 +131,7 @@
   top: calc(50% + 8px);
   transform: translateY(-50%);
   color: rgb(143, 143, 143);
-  transition: 
-    top 0.3s ease, 
-    font-size 0.3s ease, 
-    color 0.3s ease;
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
 }
 
 .container-input input:valid + .placeholder,

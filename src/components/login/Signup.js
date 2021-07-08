@@ -76,7 +76,7 @@ const Signup = () => {
             </button>
           </form>
         </div>
-        <Link to="/">Regresar página de inicio</Link>
+        <Link to="/" className="signin-link">Regresar página de inicio</Link>
       </div>
     </div>
   );

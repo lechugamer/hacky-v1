@@ -25,7 +25,7 @@ body {
   --pages: #ffffff;
   --navbar: #011938;
   --sidebar: #000a16;
-  --sidebarIcons: #059429;
+  --sidebarIcons: #ffffff;
   --fontPages: #000000;
   --fontMenu: #ffffff;
   --login: #00a529;
@@ -56,7 +56,7 @@ body {
 .container-dashboard {
   display: grid;
   height: 100vh;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr;
+  grid-template-columns: 0.46fr 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 3fr;
   grid-template-areas:
     "sidebar nav nav nav"
